@@ -1,0 +1,73 @@
+define block model
+(
+  size3 [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define sicklms laser
+(
+  range_min 0.0
+  range_max 8.192
+  fov 45.0
+  samples 90
+  # generic model properties
+  color "blue"
+  size [ 0.15 0.15 0.4 ]
+)
+
+define pioneer position
+(
+  #size3 [0.415 0.392 0.25]
+  size [0.44 0.38 0.22]
+  origin [-0.04 0 0 0]
+  gui_nose 1
+  mass 23.0
+  drive "omni"
+  sicklms(pose [0.050 0.000 0 0.000])
+)
+
+define floorplan model
+(
+  # sombre, sensible, artistic
+  color "gray30"
+
+  # most maps will need a bounding box
+  boundary 1
+
+  gui_nose 0
+  gui_grid 0
+  gui_movemask 0
+  gui_outline 0
+  gripper_return 0
+  fiducial_return 0
+  laser_return 1
+)
+
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02
+
+interval_sim 100  # simulation timestep in milliseconds
+interval_real 100  # real-time interval between simulation updates in milliseconds 
+
+window
+( 
+  size [ 450.000 450.000 ] 
+  center [0.000 0.000] 
+  rotate [ 0.000 0.000 ]
+  scale 40.0
+)
+
+# load an environment bitmap
+floorplan
+( 
+  name "blank"
+  bitmap "blank-room.png"
+  size [10.0 10.0 0.5]
+  pose [0.000 0.000 0.0000 0]
+)
+
+# throw in a robot
+pioneer( pose [ 0 1.0 0 -90.000] name "robot" color "red")
+pioneer( pose [ 0.0 -1.0 0 90.000] name "child" color "blue")
+pioneer( pose [ -1.1 -1.10 0 180.000] name "parent" color "purple")
+#block( pose [ -2.924 2.020 0 180.000] color "blue")

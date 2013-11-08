@@ -1,0 +1,24 @@
+<launch>
+
+<!--
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find dave_demo)/nav/map.yaml">
+	</node>
+  <include file="$(find amcl)/examples/amcl_diff.launch"/>-->
+
+	<!--<include file="$(find dave_demo)/nav/prime/move_base.xml"/>-->
+
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+		<!--<param name="base_local_planner" type="string" value="oit_trajectory_planner/TrajectoryPlannerROS"/>-->
+    <param name="controller_frequency" value="10.0" />
+
+    <rosparam file="$(find dave_demo)/nav/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find dave_demo)/nav/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find dave_demo)/nav/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find dave_demo)/nav/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find dave_demo)/nav/base_local_planner_params.yaml" command="load" />
+<!--    <param name="clearing_rotation_allowed" type="bool" value="true"/>-->
+    <remap from="/cmd_vel" to="/base_controller/command"/>
+  </node>
+
+</launch>

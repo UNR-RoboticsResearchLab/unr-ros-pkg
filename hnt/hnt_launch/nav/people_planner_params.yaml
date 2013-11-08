@@ -1,0 +1,36 @@
+PeopleInteractionPlannerROS:
+  max_vel_x: 3.5
+  min_vel_x: 0.0
+
+  max_rotational_vel: 30.0
+  min_in_place_rotational_vel: 0.0
+
+  backup_vel: -0.5
+
+  vx_samples: 9
+  vtheta_samples: 20
+
+  acc_lim_th: 10.0
+  acc_lim_x: 3.5
+  acc_lim_y: 1.5
+
+  holonomic_robot: false
+  #simple_attractor: true
+
+  sim_time: 3.0
+  dwa: true
+  heading_scoring: true
+
+  path_distance_bias: 0.4
+  goal_distance_bias: 0.8
+  #occdist_scale: 0.01
+
+  #partner_frame: "/child/base_link"
+  partner_frame: "/child/base_link"
+
+  #heading_lookahead: 0.325
+  #sim_time: 0.5
+
+  controller_frequency: 10.0
+  
+  heading_scoring: false
