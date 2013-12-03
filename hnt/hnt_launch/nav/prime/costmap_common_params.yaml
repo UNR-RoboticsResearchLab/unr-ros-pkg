@@ -18,4 +18,4 @@ cost_scaling_factor: 10.0
 lethal_cost_threshold: 100
 unknown_cost_value: 255
 observation_sources: scan
-scan: {sensor_frame: "/robot/base_link", topic: "/robot/laser", data_type: LaserScan, expected_update_rate: 0.4, observation_persistence: 1.0, marking: true, clearing: true, max_obstacle_height: 0.4, min_obstacle_height: 0.08}
+scan: {sensor_frame: "/robot_0/base_link", topic: "/robot_0/base_scan", data_type: LaserScan, expected_update_rate: 0.4, observation_persistence: 1.0, marking: true, clearing: true, max_obstacle_height: 0.4, min_obstacle_height: 0.08}
