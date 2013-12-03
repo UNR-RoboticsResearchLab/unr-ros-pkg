@@ -1,0 +1,15 @@
+<package>
+  <description brief="stage_adapt">
+
+     stage_adapt
+
+  </description>
+  <author>David Feil-Seifer</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/stage_adapt</url>
+  <depend package="tf"/>
+
+</package>
+
+
