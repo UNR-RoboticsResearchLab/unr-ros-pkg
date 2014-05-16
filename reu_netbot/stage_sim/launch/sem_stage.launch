@@ -1,5 +1,5 @@
 <launch>
   <node name="sim" pkg="stage_ros" type="stageros" args="$(find stage)/worlds/simple.world"/>
 
-  <node name="js" pkg="joy" type="joy_node"
+  <node name="js" pkg="joy" type="joy_node"/>
 </launch>
