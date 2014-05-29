@@ -1,10 +1,16 @@
-cmake_minimum_required(VERSION 2.4.6)
-include($ENV{ROS_ROOT}/core/rosbuild/rosbuild.cmake)
-rosbuild_init()
+cmake_minimum_required(VERSION 2.8.3)
+project(gmm_classify)
+find_package(catkin REQUIRED COMPONENTS roscpp)
 
-#set the default path for built executables to the "bin" directory
-set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
-#set the default path for built libraries to the "lib" directory
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+catkin_package(
+  CATKIN_DEPENDS opencv2
+)
+
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+)
+
+add_executable(gmm-classify src/gmm_classify.cc)
+target_link_libraries(gmm-classify ${catkin_LIBRARIES})
 
 
