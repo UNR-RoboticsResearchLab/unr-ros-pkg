@@ -9,12 +9,16 @@ project(stage_adapt)
 #  MinSizeRel     : w/o debug symbols, w/ optimization, stripped binaries
 #set(ROS_BUILD_TYPE RelWithDebInfo)
 
-find_package(catkin REQUIRED COMPONENTS)
+find_package(catkin REQUIRED COMPONENTS tf roscpp)
 
 catkin_package(
+  CATKIN_DEPENDS tf roscpp
+)
 include_directories(
  ${catkin_INCLUDE_DIRS} 
 )
 
 add_executable(stage-adapt src/stage-adapt.cc)
-
+target_link_libraries(stage-adapt
+  ${catkin_LIBRARIES}
+)
