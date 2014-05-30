@@ -70,16 +70,15 @@ include_directories(include
 
 ## Declare a cpp executable
  add_executable(point_map src/point_map.cc)
-
+ add_executable(yaml_test src/yaml-test.cc)
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
- add_dependencies(point_map point_map_generate_messages_cpp)
+# add_dependencies(point_map point_map_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
- target_link_libraries(point_map
-   ${catkin_LIBRARIES}
-   yaml-cpp
- )
+ target_link_libraries(point_map ${catkin_LIBRARIES} yaml-cpp )
+
+ target_link_libraries(yaml_test ${catkin_LIBRARIES} yaml-cpp)
 
 #############
 ## Install ##

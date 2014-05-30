@@ -14,6 +14,7 @@ double map_size = 7.0;
 int map_width = (int) (map_size / resolution);
 int map_height = (int) (map_size / resolution);
 
+
 template<typename _T>
 struct Point2D
 {
@@ -89,27 +90,41 @@ struct Segment
 std::vector<Segment> mSegments;
 std::vector<Point2D<float>* > allPoints;
 
-//for points
-void operator >> (const YAML::Node & node, Point2D<float> & p)
-{
-  node[0] >> p.x;
-  node[1] >> p.y;
-}
+namespace YAML {
+  template<>
+  struct convert<Point2D<float> > {
+    static bool decode(const Node& node, Point2D<float>&p) {
+      if(!node.IsSequence() || node.size() != 2)
+      {
+        printf( "node is wrong\n" );
+        return false;
+      }
 
-//for line segments
-void operator >> (const YAML::Node & node, Segment & s)
-{
-  node["close"] >> s.close;
-  const YAML::Node & points = node["points"];
-  s.points.resize( points.size() );
-  
-  for( unsigned int i = 0; i < points.size(); i ++ )
-  {
-    points[i] >> s.points[i];
+      p.x = node[0].as<float>();
+      p.y = node[1].as<float>();
+      printf("%f, %f\n", p.x, p.y );
+      return true;
+    }
+  };
+
+  template<>
+  struct convert<Segment> {
+    static bool decode(const Node & node, Segment & s)
+    {
+      s.close = node["close"].as<bool>();
+      const YAML::Node & points = node["points"];
+      s.points.resize( points.size() );
+      printf( "points.size: %d\n", points.size() );
+      for( unsigned int i = 0; i < points.size(); i ++ )
+      {
+        s.points[i] = points[i].as<Point2D<float> >();
     
-    //record point to be published w/ map info later
-    allPoints.push_back( & (s.points[i]) );
-  }
+        //record point to be published w/ map info later
+        allPoints.push_back( & (s.points[i]) );
+      }
+      return true;
+    }
+  };
 }
 
 bool map(point_map::PointMap::Request  &req,
@@ -168,6 +183,7 @@ int main( int argc, char* argv[] )
     return 1;
   }
   
+  /*
   std::ifstream fin(argv[1]);
   
   if(!fin.good())
@@ -179,11 +195,17 @@ int main( int argc, char* argv[] )
   YAML::Parser parser(fin);
   YAML::Node doc;
   parser.GetNextDocument(doc);
+
+  */
+
+  YAML::Node doc = YAML::LoadFile(argv[1]);
+  printf( "num segments: %d\n", doc.size() );
   mSegments.resize( doc.size() );
   
+
   for( unsigned int i = 0; i < doc.size(); i ++ )
   {
-    doc[i] >> mSegments[i];
+    mSegments[i] = doc[i].as<Segment>();
   }
   
   // for each segment
