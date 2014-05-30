@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(gmm_classify)
 find_package(catkin REQUIRED COMPONENTS roscpp)
+find_package(OpenCV)
 
 catkin_package(
   CATKIN_DEPENDS opencv2
@@ -11,6 +12,6 @@ include_directories(
 )
 
 add_executable(gmm-classify src/gmm_classify.cc)
-target_link_libraries(gmm-classify ${catkin_LIBRARIES})
+target_link_libraries(gmm-classify ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 
