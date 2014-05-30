@@ -20,11 +20,12 @@ find_package(catkin REQUIRED COMPONENTS geometry_msgs point_map tf)
 #######################################
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
+ add_message_files(
+   FILES
+   CPRWFeatureVector.msg
 #   Message1.msg
 #   Message2.msg
-# )
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -34,10 +35,10 @@ find_package(catkin REQUIRED COMPONENTS geometry_msgs point_map tf)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   geometry_msgs
-# )
+ generate_messages(
+   DEPENDENCIES
+   geometry_msgs
+ )
 
 ###################################
 ## catkin specific configuration ##
@@ -68,16 +69,16 @@ catkin_package(
 # )
 
 ## Declare a cpp executable
-# add_executable(feature_extractor_node src/feature_extractor_node.cpp)
+ add_executable(feature_extractor src/feature_extractor.cc)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(feature_extractor_node feature_extractor_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(feature_extractor_node
-#   ${catkin_LIBRARIES}
-# )
+ target_link_libraries(feature_extractor
+   ${catkin_LIBRARIES}
+ )
 
 #############
 ## Install ##
