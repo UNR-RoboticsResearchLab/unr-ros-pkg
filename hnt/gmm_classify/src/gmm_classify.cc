@@ -1,4 +1,10 @@
 #include <ros/ros.h>
+//#include <feature_extractor/CPRWFeatureVector.h>
+#include <opencv2/ml/ml.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/core/core.hpp>
+#include <stdio.h>
+
 
 int main( int argc, char* argv[] )
 {
