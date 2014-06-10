@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot name="rightHand">
+  <link name="wristLarge">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov/meshes/rightHand/WristlargeV4.stl"/>
+      </geometry>
+    </visual>
+  </link>
+</robot>
