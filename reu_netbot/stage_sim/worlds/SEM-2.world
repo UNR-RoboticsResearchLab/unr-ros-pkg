@@ -64,9 +64,10 @@ floorplan
   name "SEM Floor 2"
   bitmap "bitmaps/sem.png"
   size [25.0 25.0 0.5]
-  pose [ -29.350 27.000 0 90.000 ]
+  #pose [ -29.350 27.000 0 90.000 ]
+  pose [ 0 0 0 90 ]
 )
 
 # throw in a robot
-erratic( pose [ -38.125 18.625 0 180.000 ] name "era" color "red")
+erratic( pose [ 0 0 0 180.000 ] name "era" color "red")
 #block( pose [ -13.924 25.020 0 180.000 ] color "red")
