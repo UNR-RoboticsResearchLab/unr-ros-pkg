@@ -68,6 +68,10 @@ include_directories(include
 #   src/${PROJECT_NAME}/point_map.cpp
 # )
 
+
+#this is a hack to keep this from compiling on indigo systems
+if( ${roscpp_VERSION_MINOR} LESS 11 )
+
 ## Declare a cpp executable
  add_executable(point_map src/point_map.cc)
 
@@ -80,6 +84,7 @@ include_directories(include
    ${catkin_LIBRARIES}
    yaml-cpp
  )
+endif( ${roscpp_VERSION_MINOR} LESS 11 )
 
 #############
 ## Install ##
