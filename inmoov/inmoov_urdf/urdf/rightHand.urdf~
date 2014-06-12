@@ -3,8 +3,40 @@
   <link name="wristLarge">
     <visual>
       <geometry>
-        <mesh filename="/home/will/Documents/inmoov_stl/rightHand/WristLargeV4.stl"/>
+        <mesh filename="package://inmoov/meshes/rightHand/WristlargeV4.stl" scale=".001 .001 .001"/>
       </geometry>
     </visual>
   </link>
+
+  <link name="wristPinky">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov/meshes/rightHand/wristSmallPinky.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="0 0 3.1416" xyz="0.0195 -0.0105 .0007"/>
+    </visual>
+  </link>
+
+  <link name="wristRing">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov/meshes/rightHand/wristSmallRing.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="0 0 3.1416" xyz="0.0195 -0.0105 .0007"/>
+    </visual>
+  </link>
+
+  <joint name="pinkyKnuck1" type="revolute">
+    <limit upper="-0.35" lower="0.0" effort="1000.0" velocity="-0.5"/>
+    <origin xyz="0 0 0"/>
+    <parent link="wristLarge"/>
+    <child link="wristPinky"/>
+  </joint>
+
+  <joint name="ringKnuck1" type="revolute">
+    <limit upper="-0.35" lower="0.0" effort="1000.0" velocity="-0.5"/>
+    <origin xyz="0 0 0"/>
+    <parent link="wristLarge"/>
+    <child link="wristRing"/>
+  </joint>
 </robot>
