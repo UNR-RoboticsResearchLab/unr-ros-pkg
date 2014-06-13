@@ -5,8 +5,8 @@
       <geometry>
         <mesh filename="package://inmoov_urdf/meshes/rightHand/WristlargeV4.stl" scale=".001 .001 .001"/>
       </geometry>
-      <material name="light_green">
-        <color rgba="255 253 208 .35"/>
+      <material name="creme">
+        <color rgba="255 253 208 1"/>
       </material>
     </visual>
   </link>
@@ -16,10 +16,17 @@
       <geometry>
         <mesh filename="package://inmoov_urdf/meshes/rightHand/wristSmallPinky.stl" scale=".001 .001 .001"/>
       </geometry>
-      <material name="light_green"/>
-      <origin rpy="0 0 -0.90"/>
+      <material name="creme"/>
+      <origin rpy="0 0 -0.90" xyz="-0.01 0.0115 -0.0102"/>
     </visual>
   </link>
+
+  <joint name="pinkyKnuck1" type="revolute">
+    <limit upper="0.3" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 4.03171057" xyz="0.005 -0.0105 .0105"/>
+    <parent link="wristLarge"/>
+    <child link="wristPinky"/>
+  </joint>
 
   <link name="wristRing">
     <visual>
@@ -27,21 +34,31 @@
         <mesh filename="package://inmoov_urdf/meshes/rightHand/wristSmallRing.stl" scale=".001 .001 .001"/>
       </geometry>
       <origin rpy="0 0 -0.90" xyz="-0.01 0.0115 -0.0102"/>
-      <material name="light_green"/>
+      <material name="creme"/>
     </visual>
   </link>
 
-  <joint name="pinkyKnuck1" type="revolute">
-    <limit upper="0.35" lower="0.0" effort="1000.0" velocity="0.5"/>
-    <origin rpy="0 0 4.03171057" xyz="0.0195 -0.0105 .0007"/>
-    <parent link="wristLarge"/>
-    <child link="wristPinky"/>
-  </joint>
-
   <joint name="ringKnuck1" type="revolute">
-    <limit upper="0.26" lower="0.0" effort="1000.0" velocity="0.5"/>
-    <origin rpy="0 0 4.03171057" xyz="0.005 -0.0105 .0105"/>
+    <limit upper="0.23" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 4.03171057" xyz="0.005 -0.0105 0.0105"/>
     <parent link="wristLarge"/>
     <child link="wristRing"/>
+  </joint>
+
+  <link name="indexSeg6">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/indexSeg6.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="0.01 -0.0207 0.0008"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="indexKnuck1" type="revolute">
+    <limit upper="-1.74533" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 -0.0873" xyz="-0.0352 -0.0505 0.0107"/>
+    <parent link="wristLarge"/>
+    <child link="indexSeg6"/>
   </joint>
 </robot>
