@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="rightHand">
+
   <link name="wristLarge">
     <visual>
       <geometry>
@@ -10,6 +11,8 @@
       </material>
     </visual>
   </link>
+
+  <!-- Initial wrist joints -->
 
   <link name="wristPinky">
     <visual>
@@ -45,6 +48,8 @@
     <child link="wristRing"/>
   </joint>
 
+  <!-- Index finger definitions -->
+
   <link name="indexSeg6">
     <visual>
       <geometry>
@@ -61,4 +66,87 @@
     <parent link="wristLarge"/>
     <child link="indexSeg6"/>
   </joint>
+
+  <link name="indexSeg5">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/indexSeg5.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0119 -0.0207 0.0012"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="indexKnuck1.5" type="fixed">
+    <parent link="indexSeg6"/>
+    <child link="indexSeg5"/>
+  </joint>
+
+  <link name="indexSeg4">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/indexSeg4.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.0118 -0.0282"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="indexKnuck2" type="revolute">
+    <limit upper="-1.4" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.0011 -0.0362 0.0007"/>
+    <parent link="indexSeg5"/>
+    <child link="indexSeg4"/>
+  </joint>
+
+  <link name="indexSeg3">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/indexSeg3.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.0112 -0.0118 0.0274"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="indexKnuck2.5" type="fixed">
+    <parent link="indexSeg4"/>
+    <child link="indexSeg3"/>
+  </joint>
+
+  <link name="indexSeg2">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/indexSeg2.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01345 0.02695"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="indexKnuck3" type="revolute">
+    <limit upper="-0.87" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.00035 -0.02408 -0.00042"/>
+    <parent link="indexSeg3"/>
+    <child link="indexSeg2"/>
+  </joint>
+
+  <link name="indexSeg1">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/indexSeg1.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.01203 -0.0135 -0.02565"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="indexKnuck3.5" type="fixed">
+    <parent link="indexSeg2"/>
+    <child link="indexSeg1"/>
+  </joint>
+
+  <!-- Middle finger definitions -->
+
+
 </robot>
