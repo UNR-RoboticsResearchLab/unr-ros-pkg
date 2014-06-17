@@ -1,0 +1,17 @@
+<package>
+  <name>gmm_classify</name>
+  <version>0.0.0</version>
+  <description>
+
+     gmm_classify
+
+  </description>
+  <maintainer email="dave@cse.unr.edu">David Feil-Seifer</maintainer>
+  <license>BSD</license>
+
+  <url>http://ros.org/wiki/gmm_classify</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>opencv2</build_depend>
+  <run_depend>opencv2</run_depend>
+</package>
+
