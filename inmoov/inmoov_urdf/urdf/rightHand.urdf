@@ -24,7 +24,7 @@
     </visual>
   </link>
 
-  <joint name="pinkyKnuck1" type="revolute">
+  <joint name="wristPinkyKnuck1" type="revolute">
     <limit upper="0.3" lower="0.0" effort="1000.0" velocity="0.5"/>
     <origin rpy="0 0 4.03171057" xyz="0.005 -0.0105 .0105"/>
     <parent link="wristLarge"/>
@@ -41,7 +41,7 @@
     </visual>
   </link>
 
-  <joint name="ringKnuck1" type="revolute">
+  <joint name="wristRingKnuck1" type="revolute">
     <limit upper="0.23" lower="0.0" effort="1000.0" velocity="0.5"/>
     <origin rpy="0 0 4.03171057" xyz="0.005 -0.0105 0.0105"/>
     <parent link="wristLarge"/>
@@ -242,6 +242,104 @@
   <joint name="middleKnuck3.5" type="fixed">
     <parent link="middleSeg2"/>
     <child link="middleSeg1"/>
+  </joint>
+
+  <!-- Ring finger definitions -->
+
+  <link name="ringSeg6">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/ringSeg6.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="0.01 -0.019845 0.00069"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="ringKnuck1" type="revolute">
+    <limit upper="-1.74533" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 -3.945" xyz="0.0164 0.035 0.0002"/>
+    <parent link="wristRing"/>
+    <child link="ringSeg6"/>
+  </joint>
+
+  <link name="ringSeg5">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/ringSeg5.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0109 -0.01983 0.00125"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="ringKnuck1.5" type="fixed">
+    <parent link="ringSeg6"/>
+    <child link="ringSeg5"/>
+  </joint>
+
+  <link name="ringSeg4">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/ringSeg4.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01125 -0.02685"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="ringKnuck2" type="revolute">
+    <limit upper="-1.4" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0.00007 -0.0346 0.00085"/>
+    <parent link="ringSeg5"/>
+    <child link="ringSeg4"/>
+  </joint>
+
+  <link name="ringSeg3">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/ringSeg3.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.01017 -0.01127 0.02607"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="ringKnuck2.5" type="fixed">
+    <parent link="ringSeg4"/>
+    <child link="ringSeg3"/>
+  </joint>
+
+<link name="ringSeg2">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/ringSeg2.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01279 0.02575"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="ringKnuck3" type="revolute">
+    <limit upper="-0.87" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.0003 -0.02295 -0.0005"/>
+    <parent link="ringSeg3"/>
+    <child link="ringSeg2"/>
+  </joint>
+
+  <link name="ringSeg1">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/ringSeg1.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.01094 -0.01281 -0.02456"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="ringKnuck3.5" type="fixed">
+    <parent link="ringSeg2"/>
+    <child link="ringSeg1"/>
   </joint>
 
 </robot>
