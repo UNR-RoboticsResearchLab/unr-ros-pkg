@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <robot name="rightHand">
+
   <link name="wristLarge">
     <visual>
       <geometry>
@@ -10,6 +11,8 @@
       </material>
     </visual>
   </link>
+
+  <!-- Initial wrist joints -->
 
   <link name="wristPinky">
     <visual>
@@ -44,6 +47,8 @@
     <parent link="wristLarge"/>
     <child link="wristRing"/>
   </joint>
+
+  <!-- Index finger definitions -->
 
   <link name="indexSeg6">
     <visual>
@@ -140,4 +145,103 @@
     <parent link="indexSeg2"/>
     <child link="indexSeg1"/>
   </joint>
+
+  <!-- Middle finger definitions -->
+
+  <link name="middleSeg6">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/middleSeg6.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="0.01 -0.02227 0.00073"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="middleKnuck1" type="revolute">
+    <limit upper="-1.74533" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.0077 -0.0545 0.0107"/>
+    <parent link="wristLarge"/>
+    <child link="middleSeg6"/>
+  </joint>
+
+  <link name="middleSeg5">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/middleSeg5.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0135 -0.02225 0.0016"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="middleKnuck1.5" type="fixed">
+    <parent link="middleSeg6"/>
+    <child link="middleSeg5"/>
+  </joint>
+
+  <link name="middleSeg4">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/middleSeg4.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01265 -0.03005"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="middleKnuck2" type="revolute">
+    <limit upper="-1.4" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.00235 -0.0388 0.00085"/>
+    <parent link="middleSeg5"/>
+    <child link="middleSeg4"/>
+  </joint>
+
+  <link name="middleSeg3">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/middleSeg3.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.0129 -0.01268 0.0292"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="middleKnuck2.5" type="fixed">
+    <parent link="middleSeg4"/>
+    <child link="middleSeg3"/>
+  </joint>
+
+<link name="middleSeg2">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/middleSeg2.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01433 0.02905"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="middleKnuck3" type="revolute">
+    <limit upper="-0.87" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.00035 -0.0259 -0.0005"/>
+    <parent link="middleSeg3"/>
+    <child link="middleSeg2"/>
+  </joint>
+
+  <link name="middleSeg1">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/middleSeg1.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.0137 -0.01435 -0.02775"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="middleKnuck3.5" type="fixed">
+    <parent link="middleSeg2"/>
+    <child link="middleSeg1"/>
+  </joint>
+
 </robot>
