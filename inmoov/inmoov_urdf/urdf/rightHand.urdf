@@ -342,4 +342,102 @@
     <child link="ringSeg1"/>
   </joint>
 
+  <!-- Pinky finger definitions -->
+
+  <link name="pinkySeg6">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/pinkySeg6.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="0.01 -0.01783 0.00095"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="pinkyKnuck1" type="revolute">
+    <limit upper="-1.74533" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 -3.785" xyz="-0.00765 0.04505 -0.0014"/>
+    <parent link="wristPinky"/>
+    <child link="pinkySeg6"/>
+  </joint>
+
+  <link name="pinkySeg5">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/pinkySeg5.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.00885 -0.0178 0.00083"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="pinkyKnuck1.5" type="fixed">
+    <parent link="pinkySeg6"/>
+    <child link="pinkySeg5"/>
+  </joint>
+
+  <link name="pinkySeg4">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/pinkySeg4.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.0101 -0.02445"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="pinkyKnuck2" type="revolute">
+    <limit upper="-1.4" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="0.00275 -0.0311 0.00085"/>
+    <parent link="pinkySeg5"/>
+    <child link="pinkySeg4"/>
+  </joint>
+
+  <link name="pinkySeg3">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/pinkySeg3.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.00797 -0.01012 0.0238"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="pinkyKnuck2.5" type="fixed">
+    <parent link="pinkySeg4"/>
+    <child link="pinkySeg3"/>
+  </joint>
+
+<link name="pinkySeg2">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/pinkySeg2.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01155 0.0228"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="pinkyKnuck3" type="revolute">
+    <limit upper="-0.87" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.0003 -0.02065 -0.0005"/>
+    <parent link="pinkySeg3"/>
+    <child link="pinkySeg2"/>
+  </joint>
+
+  <link name="pinkySeg1">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/pinkySeg1.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.00866 -0.01157 -0.02192"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="pinkyKnuck3.5" type="fixed">
+    <parent link="pinkySeg2"/>
+    <child link="pinkySeg1"/>
+  </joint>
+
 </robot>
