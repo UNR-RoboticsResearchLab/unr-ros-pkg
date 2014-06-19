@@ -14,6 +14,23 @@
 
   <!-- Initial wrist joints -->
 
+  <link name="wristThumb">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/wristThumb.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="0 0 3.1415" xyz="-0.025 0.0336 -0.0095"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="wristThumbKnuck1" type="revolute">
+    <limit upper="0.7" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 1.48" xyz="-0.0307 0.0206 0.0105"/>
+    <parent link="wristLarge"/>
+    <child link="wristThumb"/>
+  </joint>
+
   <link name="wristPinky">
     <visual>
       <geometry>
@@ -26,7 +43,7 @@
 
   <joint name="wristPinkyKnuck1" type="revolute">
     <limit upper="0.3" lower="0.0" effort="1000.0" velocity="0.5"/>
-    <origin rpy="0 0 4.03171057" xyz="0.005 -0.0105 .0105"/>
+    <origin rpy="0 0 4.03171057" xyz="0.005 -0.0105 0.0105"/>
     <parent link="wristLarge"/>
     <child link="wristPinky"/>
   </joint>
@@ -438,6 +455,87 @@
   <joint name="pinkyKnuck3.5" type="fixed">
     <parent link="pinkySeg2"/>
     <child link="pinkySeg1"/>
+  </joint>
+
+  <!-- Thumb definitions -->
+
+  <link name="thumbSeg5">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/thumbSeg5.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="1.57 -1.32 -2.423" xyz="-0.02888 0.0055 -0.02417"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="thumbKnuck0.5" type="fixed">
+    <parent link="wristThumb"/>
+    <child link="thumbSeg5"/>
+  </joint>
+
+  <link name="thumbSeg4">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/thumbSeg4.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.570796 0 0" xyz="-0.01808 -0.01255 -0.00515"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="thumbKnuck1" type="revolute">
+    <limit upper="-1.4" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0.23 -2.423" xyz="-0.025 0.02605 -0.00065"/>
+    <parent link="thumbSeg5"/>
+    <child link="thumbSeg4"/>
+  </joint>
+
+  <link name="thumbSeg3">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/thumbSeg3.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="-0.01857 -0.0125 -0.0053"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="thumbKnuck1.5" type="fixed">
+    <parent link="thumbSeg4"/>
+    <child link="thumbSeg3"/>
+  </joint>
+
+<link name="thumbSeg2">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/thumbSeg2.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.570796 3.14 0" xyz="-0.015 -0.01399 0.02905"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="thumbKnuck2" type="revolute">
+    <limit upper="-1.13" lower="0.0" effort="1000.0" velocity="0.5"/>
+    <origin rpy="0 0 0" xyz="-0.00221 -0.035 0"/>
+    <parent link="thumbSeg3"/>
+    <child link="thumbSeg2"/>
+  </joint>
+
+  <link name="thumbSeg1">
+    <visual>
+      <geometry>
+        <mesh filename="package://inmoov_urdf/meshes/rightHand/thumbSeg1.stl" scale=".001 .001 .001"/>
+      </geometry>
+      <origin rpy="-1.57 0 3.14" xyz="0.01575 -0.014 -0.03005"/>
+      <material name="creme"/>
+    </visual>
+  </link>
+
+  <joint name="thumbKnuck2.5" type="fixed">
+    <parent link="thumbSeg2"/>
+    <child link="thumbSeg1"/>
   </joint>
 
 </robot>
