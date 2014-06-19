@@ -1,5 +1,5 @@
 <library path="lib/libmodel_base_local_planner">
-  <class name="model_base_local_planner/ModelTrajectoryPlannerROS, nav_core::BaseLocalPlanner" base_class_type="nav_core::BaseLocalPlanner">
+  <class name="model_base_local_planner/ModelTrajectoryPlannerROS" type="model_base_local_planner::ModelTrajectoryPlannerROS" base_class_type="nav_core::BaseLocalPlanner">
     <description>
       Implementation of a trajectory planner that weights trajectories both on avoidance of obstacles and conformity to a given distance model.
     </description>
