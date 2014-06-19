@@ -25,7 +25,7 @@ private:
 
 StageBot::StageBot():
 	linear_(1),
-	angular_(2),
+	angular_(3),
   deadman_(false)
 {
 	nh_.param("axis_linear", linear_, linear_);
