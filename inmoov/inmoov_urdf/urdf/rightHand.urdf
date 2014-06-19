@@ -10,6 +10,12 @@
         <color rgba="255 253 208 1"/>
       </material>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.087 0.09 0.018"/>
+      </geometry>
+      <origin xyz="0 -0.001 0.009"/>
+    </collision>
   </link>
 
   <!-- Initial wrist joints -->
@@ -22,6 +28,12 @@
       <origin rpy="0 0 3.1415" xyz="-0.025 0.0336 -0.0095"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.027 0.036 0.018"/>
+      </geometry>
+      <origin rpy="0 0 0.72" xyz="-0.0115 0.0135 -0.001"/>
+    </collision>
   </link>
 
   <joint name="wristThumbKnuck1" type="revolute">
@@ -39,6 +51,12 @@
       <material name="creme"/>
       <origin rpy="0 0 -0.90" xyz="-0.01 0.0115 -0.0102"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.048 0.018"/>
+      </geometry>
+      <origin rpy="0 0 -0.52" xyz="-0.026 0.022 0"/>
+    </collision>
   </link>
 
   <joint name="wristPinkyKnuck1" type="revolute">
@@ -56,6 +74,12 @@
       <origin rpy="0 0 -0.90" xyz="-0.01 0.0115 -0.0102"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <box size="0.03 0.036 0.018"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.0015 0.018 0"/>
+    </collision>
   </link>
 
   <joint name="wristRingKnuck1" type="revolute">
@@ -75,6 +99,12 @@
       <origin rpy="-1.570796 0 0" xyz="0.01 -0.0207 0.0008"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.0362" radius="0.0085"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.00087 -0.0181 0"/>
+    </collision>
   </link>
 
   <joint name="indexKnuck1" type="revolute">
@@ -107,6 +137,12 @@
       <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.0118 -0.0282"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02408" radius="0.008"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 -0.01204 0"/>
+    </collision>
   </link>
 
   <joint name="indexKnuck2" type="revolute">
@@ -139,6 +175,12 @@
       <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01345 0.02695"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.025" radius="0.007"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0 -0.0125 0"/>
+    </collision>
   </link>
 
   <joint name="indexKnuck3" type="revolute">
@@ -173,6 +215,12 @@
       <origin rpy="-1.570796 0 0" xyz="0.01 -0.02227 0.00073"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.0388" radius="0.009"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.00135 -0.0194 0"/>
+    </collision>
   </link>
 
   <joint name="middleKnuck1" type="revolute">
@@ -205,6 +253,12 @@
       <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01265 -0.03005"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.0259" radius="0.008"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0.0007 -0.01295 0"/>
+    </collision>
   </link>
 
   <joint name="middleKnuck2" type="revolute">
@@ -229,7 +283,7 @@
     <child link="middleSeg3"/>
   </joint>
 
-<link name="middleSeg2">
+  <link name="middleSeg2">
     <visual>
       <geometry>
         <mesh filename="package://inmoov_urdf/meshes/rightHand/middleSeg2.stl" scale=".001 .001 .001"/>
@@ -237,6 +291,12 @@
       <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01433 0.02905"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.025" radius="0.007"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0.001 -0.0125 0"/>
+    </collision>
   </link>
 
   <joint name="middleKnuck3" type="revolute">
@@ -271,6 +331,12 @@
       <origin rpy="-1.570796 0 0" xyz="0.01 -0.019845 0.00069"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.0346" radius="0.0085"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0002 -0.0173 0"/>
+    </collision>
   </link>
 
   <joint name="ringKnuck1" type="revolute">
@@ -303,6 +369,12 @@
       <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01125 -0.02685"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02295" radius="0.0075"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0004 -0.011475 0"/>
+    </collision>
   </link>
 
   <joint name="ringKnuck2" type="revolute">
@@ -327,7 +399,7 @@
     <child link="ringSeg3"/>
   </joint>
 
-<link name="ringSeg2">
+  <link name="ringSeg2">
     <visual>
       <geometry>
         <mesh filename="package://inmoov_urdf/meshes/rightHand/ringSeg2.stl" scale=".001 .001 .001"/>
@@ -335,6 +407,12 @@
       <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01279 0.02575"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.023" radius="0.0065"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0003 -0.0115 0"/>
+    </collision>
   </link>
 
   <joint name="ringKnuck3" type="revolute">
@@ -369,6 +447,12 @@
       <origin rpy="-1.570796 0 0" xyz="0.01 -0.01783 0.00095"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.0311" radius="0.0073"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="0.001 -0.01555 0"/>
+    </collision>
   </link>
 
   <joint name="pinkyKnuck1" type="revolute">
@@ -401,6 +485,12 @@
       <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.0101 -0.02445"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02065" radius="0.0067"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.00195 -0.010325 0"/>
+    </collision>
   </link>
 
   <joint name="pinkyKnuck2" type="revolute">
@@ -425,7 +515,7 @@
     <child link="pinkySeg3"/>
   </joint>
 
-<link name="pinkySeg2">
+  <link name="pinkySeg2">
     <visual>
       <geometry>
         <mesh filename="package://inmoov_urdf/meshes/rightHand/pinkySeg2.stl" scale=".001 .001 .001"/>
@@ -433,6 +523,12 @@
       <origin rpy="1.57 0 3.14" xyz="-0.0119 -0.01155 0.0228"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.02" radius="0.0057"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0017 -0.01 0"/>
+    </collision>
   </link>
 
   <joint name="pinkyKnuck3" type="revolute">
@@ -482,6 +578,12 @@
       <origin rpy="-1.570796 0 0" xyz="-0.01808 -0.01255 -0.00515"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.035" radius="0.0115"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0025 -0.0175 0"/>
+    </collision>
   </link>
 
   <joint name="thumbKnuck1" type="revolute">
@@ -506,7 +608,7 @@
     <child link="thumbSeg3"/>
   </joint>
 
-<link name="thumbSeg2">
+  <link name="thumbSeg2">
     <visual>
       <geometry>
         <mesh filename="package://inmoov_urdf/meshes/rightHand/thumbSeg2.stl" scale=".001 .001 .001"/>
@@ -514,6 +616,12 @@
       <origin rpy="-1.570796 3.14 0" xyz="-0.015 -0.01399 0.02905"/>
       <material name="creme"/>
     </visual>
+    <collision>
+      <geometry>
+        <cylinder length="0.024" radius="0.0083"/>
+      </geometry>
+      <origin rpy="1.57 0 0" xyz="-0.0005 -0.012 0"/>
+    </collision>
   </link>
 
   <joint name="thumbKnuck2" type="revolute">
