@@ -5,17 +5,18 @@
 
   <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping">
     <rosparam>
-      maxUrange: 3.9
-      maxRange: 4.0
-      temporalUpdate: 0.02
-      linearUpdate: 0.5
-      angularUpdate: 0.25
-      map_update_interval: 0.25
-      xmin: -30.0
-      xmax: 30.0
-      ymin: -30.0
-      ymax: 30.0
+      maxUrange: 4.0
+      maxRange: 5.0
+      temporalUpdate: -1.0
+      linearUpdate: 0.2
+      angularUpdate: 0.2
+      map_update_interval: 5
+      xmin: -5.0
+      xmax: 5.0
+      ymin: -5.0
+      ymax: 5.0
+      particles: 30
+      delta: 0.02
     </rosparam>
   </node>
-
 </launch>

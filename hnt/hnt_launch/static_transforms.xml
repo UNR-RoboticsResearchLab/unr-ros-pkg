@@ -1,8 +1,0 @@
-<launch>
-  <node pkg="tf" type="static_transform_publisher" name="model_link" args="0 0 0 0 0 0 /robot/base_link base_link 50"/>
-  <node pkg="tf" type="static_transform_publisher" name="robot_links" args="0 0 0 0 0 0 /robot_1/base_laser_link /robot/base_laser_link 50"/>
-  <node pkg="tf" type="static_transform_publisher" name="odom_link" args="0 0 0 0 0 0 /robot/odom /robot_1/odom 50"/>
-  <node pkg="tf" type="static_transform_publisher" name="bandit_link" args="0 0 0.75 0 0 0 /robot/base_link bandit_torso_link 50"/>
-  <node pkg="tf" type="static_transform_publisher" name="ovh_link" args="0 0 -3.5 0 -M_PI  0 /ovh_height /ovh 50"/>
-  <node pkg="tf" type="static_transform_publisher" name="ovh_link2" args="0 0 0 0 0 0 /ovh /map 50"/>
-</launch>

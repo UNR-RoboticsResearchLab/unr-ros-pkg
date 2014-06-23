@@ -26,12 +26,14 @@ private:
 StageBot::StageBot():
 	linear_(1),
 	angular_(3),
+  l_scale_(0.6),
+  a_scale_(0.3),
   deadman_(false)
 {
 	nh_.param("axis_linear", linear_, linear_);
 	nh_.param("axis_angular", angular_, angular_);
-	nh_.param("scale_angular", a_scale_, 0.5);
-	nh_.param("scale_linear", l_scale_, 0.6);
+	nh_.param("scale_angular", a_scale_, a_scale_);
+	nh_.param("scale_linear", l_scale_, l_scale_);
   nh_.param("pub_rate", pub_rate_, 10.0);
 	vel_pub_ = nh_.advertise<geometry_msgs::Twist>("cmd_vel", 1);
 

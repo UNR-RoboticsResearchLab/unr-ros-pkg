@@ -1,0 +1,22 @@
+<launch>
+  <node name="sim" pkg="stage_ros" type="stageros" args="$(find stage_sim)/worlds/SEM-2.world"/>
+
+  <node name="js" pkg="joy" type="joy_node"/>
+
+  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping">
+    <rosparam>
+      maxUrange: 4.0
+      maxRange: 5.0
+      temporalUpdate: -1.0
+      linearUpdate: 0.4
+      angularUpdate: 0.2
+      map_update_interval: 5
+      xmin: -5.0
+      xmax: 5.0
+      ymin: -5.0
+      ymax: 5.0
+      particles: 30
+      delta: 0.02
+    </rosparam>
+  </node>
+</launch>
