@@ -1,0 +1,408 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /TF1
+      Splitter Ratio: 0.5
+    Tree Height: 601
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: ""
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.03
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.5
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        indexSeg1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        indexSeg2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        indexSeg3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        indexSeg4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        indexSeg5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        indexSeg6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        middleSeg1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        middleSeg2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        middleSeg3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        middleSeg4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        middleSeg5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        middleSeg6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pinkySeg1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pinkySeg2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pinkySeg3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pinkySeg4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pinkySeg5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pinkySeg6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ringSeg1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ringSeg2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ringSeg3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ringSeg4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ringSeg5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ringSeg6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumbSeg1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumbSeg2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumbSeg3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumbSeg4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thumbSeg5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wristLarge:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wristPinky:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wristRing:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wristThumb:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        indexSeg1:
+          Value: true
+        indexSeg2:
+          Value: true
+        indexSeg3:
+          Value: true
+        indexSeg4:
+          Value: true
+        indexSeg5:
+          Value: true
+        indexSeg6:
+          Value: true
+        middleSeg1:
+          Value: true
+        middleSeg2:
+          Value: true
+        middleSeg3:
+          Value: true
+        middleSeg4:
+          Value: true
+        middleSeg5:
+          Value: true
+        middleSeg6:
+          Value: true
+        pinkySeg1:
+          Value: true
+        pinkySeg2:
+          Value: true
+        pinkySeg3:
+          Value: true
+        pinkySeg4:
+          Value: true
+        pinkySeg5:
+          Value: true
+        pinkySeg6:
+          Value: true
+        ringSeg1:
+          Value: true
+        ringSeg2:
+          Value: true
+        ringSeg3:
+          Value: true
+        ringSeg4:
+          Value: true
+        ringSeg5:
+          Value: true
+        ringSeg6:
+          Value: true
+        thumbSeg1:
+          Value: true
+        thumbSeg2:
+          Value: true
+        thumbSeg3:
+          Value: true
+        thumbSeg4:
+          Value: true
+        thumbSeg5:
+          Value: true
+        wristLarge:
+          Value: true
+        wristPinky:
+          Value: true
+        wristRing:
+          Value: true
+        wristThumb:
+          Value: true
+      Marker Scale: 0.05
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: false
+      Tree:
+        wristLarge:
+          indexSeg6:
+            indexSeg5:
+              indexSeg4:
+                indexSeg3:
+                  indexSeg2:
+                    indexSeg1:
+                      {}
+          middleSeg6:
+            middleSeg5:
+              middleSeg4:
+                middleSeg3:
+                  middleSeg2:
+                    middleSeg1:
+                      {}
+          wristPinky:
+            pinkySeg6:
+              pinkySeg5:
+                pinkySeg4:
+                  pinkySeg3:
+                    pinkySeg2:
+                      pinkySeg1:
+                        {}
+          wristRing:
+            ringSeg6:
+              ringSeg5:
+                ringSeg4:
+                  ringSeg3:
+                    ringSeg2:
+                      ringSeg1:
+                        {}
+          wristThumb:
+            thumbSeg5:
+              thumbSeg4:
+                thumbSeg3:
+                  thumbSeg2:
+                    thumbSeg1:
+                      {}
+      Update Interval: 0
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Fixed Frame: wristLarge
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 0.456491
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.06
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: -0.00256926
+        Y: -0.0209791
+        Z: 0.0184084
+      Name: Current View
+      Near Clip Distance: 0.01
+      Pitch: 0.495398
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 0.735398
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 882
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd00000004000000000000013c000002e8fc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006400fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000028000002e8000000dd00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f000002e8fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730100000028000002e8000000b000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004c00000003efc0100000002fb0000000800540069006d00650100000000000004c0000002f600fffffffb0000000800540069006d0065010000000000000450000000000000000000000269000002e800000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: false
+  Width: 1216
+  X: 46
+  Y: 60
