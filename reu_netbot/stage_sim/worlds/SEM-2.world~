@@ -112,6 +112,12 @@ define block19 model
   gui_nose 0
 )
 
+define block20 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
 define topurg ranger
 (
 	sensor( 			
@@ -197,3 +203,4 @@ block16( pose [ 7.0 0.0 0 180.000 ] color "black")
 block17( pose [ 12.0 4.0 0 180.000 ] color "black")
 block18( pose [ 12.0 8.0 0 180.000 ] color "black")
 block19( pose [ 12.0 12.0 0 180.000 ] color "black")
+block20( pose [ -3.0 -2.0 0 180.000 ] color "black")

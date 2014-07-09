@@ -41,7 +41,7 @@
         
       transform_tolerance: 0.5
       update_frequency: 5.0
-      publish_frequency: 2.50
+      publish_frequency: 50.0
 
       global_frame: map
       robot_base_frame: base_link

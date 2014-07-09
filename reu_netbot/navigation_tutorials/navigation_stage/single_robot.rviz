@@ -5,8 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Inflated Obstacles1
-        - /LaserScan1
       Splitter Ratio: 0.5
     Tree Height: 543
   - Class: rviz/Selection

@@ -40,8 +40,8 @@
       robot_radius: 0.20
         
       transform_tolerance: 0.5
-      update_frequency: 5.0
-      publish_frequency: 5.0
+      update_frequency: 50.0
+      publish_frequency: 50.0
 
       global_frame: map
       robot_base_frame: base_link
