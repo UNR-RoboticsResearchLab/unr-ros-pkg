@@ -26,7 +26,7 @@ private:
 StageBot::StageBot():
 	linear_(1),
 	angular_(3),
-  l_scale_(0.6),
+  l_scale_(0.4),
   a_scale_(0.3),
   deadman_(false)
 {
@@ -55,10 +55,10 @@ void StageBot::joyCallback(const sensor_msgs::Joy::ConstPtr& joy)
   {
     deadman_ = false;
   }
+
   vel_.angular.z = l_scale_*joy->axes[angular_];
   vel_.linear.x = a_scale_*joy->axes[linear_];
   ROS_DEBUG( "xaxis: %f(%f), zrot: %f(%f)", joy->axes[linear_], vel_.linear.x, joy->axes[angular_], vel_.angular.z );
-
 }
 
 void StageBot::spin()

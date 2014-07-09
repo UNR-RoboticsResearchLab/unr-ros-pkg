@@ -1,22 +1,73 @@
 <launch>
-  <node name="sim" pkg="stage_ros" type="stageros" args="$(find stage_sim)/worlds/SEM-2.world"/>
 
+  <master auto="start"/>
+
+  <!-- Set simulation time -->
+  <param name="/use_sim_time" value="true" type="bool"/>
+
+  <!-- Set to your sensor's range -->
+  <arg name="sensor_range" default="4.0"/>
+
+  <!-- Set stage to run your world file -->
+  <node name="sim" pkg="stage_ros" type="stageros" args="$(find stage_sim)/worlds/SEM-2.world" respawn="false">
+    <param name="base_watchdog_timeout" value="0.2"/>
+  </node>
+
+  <!-- Set joystick controls -->
   <node name="js" pkg="joy" type="joy_node"/>
 
-  <node name="slam_gmapping" pkg="gmapping" type="slam_gmapping">
-    <rosparam>
-      maxUrange: 4.0
-      maxRange: 5.0
-      temporalUpdate: -1.0
-      linearUpdate: 0.4
-      angularUpdate: 0.2
-      map_update_interval: 5
-      xmin: -5.0
-      xmax: 5.0
-      ymin: -5.0
-      ymax: 5.0
-      particles: 30
-      delta: 0.02
+  <!-- Set up the move base -->
+  <include file="$(find navigation_stage)/move_base_config/move_base.xml"/>
+
+  <!-- Set up slam mapping -->
+  <include file="$(find navigation_stage)/move_base_config/slam_gmapping.xml"/>
+
+  <!-- Set up rviz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.rviz" />
+
+
+  <node pkg="frontier_exploration" type="explore_client" name="explore_client" output="screen"/>
+
+  <node pkg="frontier_exploration" type="explore_server" name="explore_server" output="screen" >
+    <param name="frequency" type="double" value="5.0"/>
+    <param name="goal_aliasing" type="double" value="$(arg sensor_range)"/>
+
+    #All standard costmap_2d parameters as in move_base, other than BoundedExploreLayer
+    <rosparam ns="explore_costmap" subst_value="true">
+      #Sample parameters
+      #footprint: [[0.1, 0.0], [0.0, 0.1], [0.0, -0.1], [-0.1, 0.0]]
+      footprint: [ [0.3302, -0.0508], [0.254, -0.0508], [0.254, -0.254], [-0.254, -0.254], [-0.254, 0.254], [0.254, 0.254], [0.254, 0.0508], [0.3302, 0.0508] ]
+      robot_radius: 0.20
+        
+      transform_tolerance: 0.5
+      update_frequency: 5.0
+      publish_frequency: 2.50
+
+      global_frame: map
+      robot_base_frame: base_link
+      resolution: 0.02
+
+      rolling_window: false
+      track_unknown_space: true
+
+      plugins: 
+     
+        - {name: explore_boundary, type: "frontier_exploration::BoundedExploreLayer"}
+        - {name: sensor,       type: "costmap_2d::ObstacleLayer"}
+        - {name: inflation,    type: "costmap_2d::InflationLayer"}
+
+      explore_boundary:
+        resize_to_boundary: true
+        frontier_travel_point: closest
+        explore_clear_space: false
+
+      sensor:
+        observation_sources: laser
+        laser: {data_type: LaserScan, clearing: true, marking: true, topic: scan, inf_is_valid: true, raytrace_range: $(arg sensor_range), obstacle_range: $(arg sensor_range)}
+
+      inflation:
+        inflation_radius: 0.15
     </rosparam>
   </node>
+
 </launch>

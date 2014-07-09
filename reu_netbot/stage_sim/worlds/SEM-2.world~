@@ -1,4 +1,112 @@
-define block model
+define block1 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block2 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block3 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block4 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block5 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block6 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block7 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block8 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block9 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block10 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block11 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block12 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block13 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block14 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block15 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block16 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block17 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block18 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block19 model
 (
   size [0.5 0.5 0.5]
   gui_nose 0
@@ -9,7 +117,7 @@ define topurg ranger
 	sensor( 			
     range [ 0.0  4 ]
     fov 270.25
-   samples 100
+   samples 90
   )
 
   # generic model properties
@@ -47,7 +155,7 @@ define floorplan model
 # set the resolution of the underlying raytrace model in meters
 resolution 0.02
 
-interval_sim 100  # simulation timestep in milliseconds
+interval_sim 10  # simulation timestep in milliseconds
 
 
 window
@@ -70,4 +178,22 @@ floorplan
 
 # throw in a robot
 erratic( pose [ 0 0 0 180.000 ] name "era" color "red")
-#block( pose [ -13.924 25.020 0 180.000 ] color "red")
+block1( pose [ -4.0 0 0 180.000 ] color "black")
+block2( pose [ -9.0 0 0 180.000 ] color "black")
+block3( pose [ -12.0 -3.0 0 180.000 ] color "black")
+block4( pose [ -12.0 -7.0 0 180.000 ] color "black")
+block5( pose [ -12.0 -11.0 0 180.000 ] color "black")
+block6( pose [ 0.0 -11.0 0 180.000 ] color "black")
+block7( pose [ 3.0 -9.0 0 180.000 ] color "black")
+block8( pose [ 3.0 -3.0 0 180.000 ] color "black")
+block9( pose [ 3.0 0.0 0 180.000 ] color "black")
+block10( pose [ -5.0 -5.0 0 180.000 ] color "black")
+block11( pose [ 8.0 -11.0 0 180.000 ] color "black")
+block12( pose [ 12.0 -11.0 0 180.000 ] color "black")
+block13( pose [ 12.0 -5.0 0 180.000 ] color "black")
+block14( pose [ 12.0 0.0 0 180.000 ] color "black")
+block15( pose [ -7.0 -11.0 0 180.000 ] color "black")
+block16( pose [ 7.0 0.0 0 180.000 ] color "black")
+block17( pose [ 12.0 4.0 0 180.000 ] color "black")
+block18( pose [ 12.0 8.0 0 180.000 ] color "black")
+block19( pose [ 12.0 12.0 0 180.000 ] color "black")
