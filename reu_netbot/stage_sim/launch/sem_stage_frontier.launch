@@ -2,46 +2,46 @@
 
   <master auto="start"/>
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set simulation time -->
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <param name="/use_sim_time" value="true" type="bool"/>
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set to your sensor's range -->
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <arg name="sensor_range" default="4.0"/>
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set stage to run your world file -->
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <node name="sim" pkg="stage_ros" type="stageros" args="$(find stage_sim)/worlds/SEM-2.world" respawn="false">
     <param name="base_watchdog_timeout" value="0.2"/>
   </node>
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set joystick controls -->
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <node name="js" pkg="joy" type="joy_node"/>
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set up the move base -->
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <include file="$(find navigation_stage)/move_base_config/move_base.xml"/>
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set up slam mapping -->
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <include file="$(find navigation_stage)/move_base_config/slam_gmapping.xml"/>
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <node pkg="frontier_exploration" type="explore_client" name="explore_client" output="screen"/>
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
 
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <node pkg="frontier_exploration" type="explore_server" name="explore_server" output="screen" >
     <param name="frequency" type="double" value="5.0"/>
     <param name="goal_aliasing" type="double" value="$(arg sensor_range)"/>
@@ -59,7 +59,7 @@
 
       global_frame: map
       robot_base_frame: base_link
-      resolution: 0.02
+      resolution: 0.05
 
       rolling_window: false
       track_unknown_space: true
@@ -84,9 +84,9 @@
     </rosparam>
   </node>
 
-  <!--      -->  
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set up rviz -->
-  <!--      -->
+  <!-- ///////////////////////////////////////////////////////////////////  -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.rviz" />
 
 

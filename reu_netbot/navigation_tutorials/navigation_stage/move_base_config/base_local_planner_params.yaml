@@ -27,7 +27,7 @@ TrajectoryPlannerROS:
   yaw_goal_tolerance: 0.05
 
   #We'll configure how long and with what granularity we'll forward simulate trajectories
-  sim_time: 1.7
+  sim_time: 1.0
   sim_granularity: 0.025
   vx_samples: 3
   vtheta_samples: 20
