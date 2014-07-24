@@ -18,7 +18,7 @@
     </collision>
   </link>
 
-  <!-- Initial wrist joints -->
+  <!-- ########## Initial wrist joints ########## -->
 
   <link name="wristThumb">
     <visual>
@@ -53,9 +53,9 @@
     </visual>
     <collision>
       <geometry>
-        <box size="0.03 0.045 0.018"/>
+        <box size="0.03 0.048 0.018"/>
       </geometry>
-      <origin rpy="0 0 -0.52" xyz="-0.028 0.02 0"/>
+      <origin rpy="0 0 -0.52" xyz="-0.026 0.022 0"/>
     </collision>
   </link>
 
@@ -89,7 +89,7 @@
     <child link="wristRing"/>
   </joint>
 
-  <!-- Index finger definitions -->
+  <!-- ########## Index finger definitions ########## -->
 
   <link name="indexSeg6">
     <visual>
@@ -205,7 +205,7 @@
     <child link="indexSeg1"/>
   </joint>
 
-  <!-- Middle finger definitions -->
+  <!-- ########## Middle finger definitions ########## -->
 
   <link name="middleSeg6">
     <visual>
@@ -321,7 +321,7 @@
     <child link="middleSeg1"/>
   </joint>
 
-  <!-- Ring finger definitions -->
+  <!-- ########## Ring finger definitions ########## -->
 
   <link name="ringSeg6">
     <visual>
@@ -437,7 +437,7 @@
     <child link="ringSeg1"/>
   </joint>
 
-  <!-- Pinky finger definitions -->
+  <!-- ########## Pinky finger definitions ########## -->
 
   <link name="pinkySeg6">
     <visual>
@@ -553,7 +553,7 @@
     <child link="pinkySeg1"/>
   </joint>
 
-  <!-- Thumb definitions -->
+  <!-- ########## Thumb definitions ########## -->
 
   <link name="thumbSeg5">
     <visual>
