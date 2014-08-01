@@ -125,7 +125,7 @@ define topurg ranger
     range [ 0.0  8.0 ]
     #fov 270.25
     fov 180.0
-    samples 270
+    samples 180
   )
 
   # generic model properties

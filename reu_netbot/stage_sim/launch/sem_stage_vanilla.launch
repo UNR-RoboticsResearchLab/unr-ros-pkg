@@ -10,7 +10,7 @@
   <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set to your sensor's range -->
   <!-- ///////////////////////////////////////////////////////////////////  -->
-  <arg name="sensor_range" default="4.0"/>
+  <arg name="sensor_range" default="10.0"/>
 
   <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set stage to run your world file -->
@@ -27,7 +27,7 @@
   <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set up the move base -->
   <!-- ///////////////////////////////////////////////////////////////////  -->
-  <!--include file="$(find navigation_stage)/move_base_config/move_base.xml"/-->
+  <include file="$(find navigation_stage)/move_base_config/move_base.xml"/>
 
   <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set up slam mapping -->
@@ -37,7 +37,7 @@
   <!-- ///////////////////////////////////////////////////////////////////  -->
   <!-- Set up rviz -->
   <!-- ///////////////////////////////////////////////////////////////////  -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.rviz" />
+  < node name="rviz" pkg="rviz" type="rviz" args="-d $(find navigation_stage)/single_robot.rviz" />
 
 
 </launch>

@@ -1,0 +1,13 @@
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Changelog for package hector_worldmodel_geotiff_plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+0.3.1 (2014-03-30)
+------------------
+* Updated to new format 2014
+* add missing "lib" prefix in library path
+* Contributors: Alexander Stumpf, Thorsten Graber
+
+0.3.0 (2013-09-03)
+------------------
+* catkinized stack hector_worldmodel
