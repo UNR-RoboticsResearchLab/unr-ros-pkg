@@ -118,6 +118,36 @@ define block20 model
   gui_nose 0
 )
 
+define block21 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block22 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block23 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block24 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
+define block25 model
+(
+  size [0.5 0.5 0.5]
+  gui_nose 0
+)
+
 define topurg ranger
 (
 	sensor( 			
@@ -125,7 +155,7 @@ define topurg ranger
     range [ 0.0  8.0 ]
     #fov 270.25
     fov 180.0
-    samples 180
+    samples 1081
   )
 
   # generic model properties
@@ -161,7 +191,7 @@ define floorplan model
 )
 
 # set the resolution of the underlying raytrace model in meters
-resolution 0.02
+resolution 0.05
 
 interval_sim 10  # simulation timestep in milliseconds
 
@@ -179,7 +209,7 @@ floorplan
 ( 
   name "SEM Floor 2"
   bitmap "bitmaps/sem.png"
-  size [25.0 25.0 0.5]
+  size [30.0 30.0 0.5]
   #pose [ -29.350 27.000 0 90.000 ]
   pose [ 0 0 0 90 ]
 )
@@ -188,21 +218,26 @@ floorplan
 erratic( pose [ 0 0 0 180.000 ] name "era" color "red")
 block1( pose [ -4.0 0 0 180.000 ] color "black")
 block2( pose [ -9.0 0 0 180.000 ] color "black")
-block3( pose [ -12.0 -3.0 0 180.000 ] color "black")
-block4( pose [ -12.0 -7.0 0 180.000 ] color "black")
-block5( pose [ -12.0 -11.0 0 180.000 ] color "black")
-block6( pose [ 0.0 -11.0 0 180.000 ] color "black")
-block7( pose [ 3.0 -9.0 0 180.000 ] color "black")
-block8( pose [ 3.0 -3.0 0 180.000 ] color "black")
-block9( pose [ 3.0 0.0 0 180.000 ] color "black")
-block10( pose [ -5.0 -5.0 0 180.000 ] color "black")
-block11( pose [ 8.0 -11.0 0 180.000 ] color "black")
-block12( pose [ 12.0 -11.0 0 180.000 ] color "black")
-block13( pose [ 12.0 -5.0 0 180.000 ] color "black")
-block14( pose [ 12.0 0.0 0 180.000 ] color "black")
-block15( pose [ -7.0 -11.0 0 180.000 ] color "black")
+block3( pose [ -14.0 -0.0 0 180.000 ] color "black")
+block4( pose [ -14.0 -4.0 0 180.000 ] color "black")
+block5( pose [ -14.0 -8.0 0 180.000 ] color "black")
+block6( pose [ 0.0 -14.0 0 180.000 ] color "black")
+block7( pose [ 4.0 -9.0 0 180.000 ] color "black")
+block8( pose [ 4.0 -5.0 0 180.000 ] color "black")
+block9( pose [ 4.0 0.0 0 180.000 ] color "black")
+block10( pose [ -5.0 -7.0 0 180.000 ] color "black")
+block11( pose [ 8.0 -14.0 0 180.000 ] color "black")
+block12( pose [ 14.0 -14.0 0 180.000 ] color "black")
+block13( pose [ 14.0 -5.0 0 180.000 ] color "black")
+block14( pose [ 14.0 0.0 0 180.000 ] color "black")
+block15( pose [ -7.0 -14.0 0 180.000 ] color "black")
 block16( pose [ 7.0 0.0 0 180.000 ] color "black")
-block17( pose [ 12.0 4.0 0 180.000 ] color "black")
-block18( pose [ 12.0 8.0 0 180.000 ] color "black")
-block19( pose [ 12.0 12.0 0 180.000 ] color "black")
-block20( pose [ -3.0 -2.0 0 180.000 ] color "black")
+block17( pose [ 14.0 4.0 0 180.000 ] color "black")
+block18( pose [ 14.0 8.0 0 180.000 ] color "black")
+block19( pose [ 14.0 12.0 0 180.000 ] color "black")
+block20( pose [ -3.0 -4.0 0 180.000 ] color "black")
+block21( pose [ 14.0 -9.0 0 180.000 ] color "black")
+block22( pose [ -14.0 -12.0 0 180.000 ] color "black")
+block23( pose [ -13.0 -14.0 0 180.000 ] color "black")
+block24( pose [ 0.0 1.0 0 180.000 ] color "black")
+block25( pose [ -6.0 -7.0 0 180.000 ] color "black")

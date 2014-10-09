@@ -3,7 +3,7 @@
 #http://www.ros.org/wiki/base_local_planner
 TrajectoryPlannerROS:
   #Set the acceleration limits of the robot
-  acc_lim_theta: 3.2 
+  acc_lim_th: 3.2 
   acc_lim_x: 2.5
   acc_lim_y: 2.5
 
@@ -27,7 +27,7 @@ TrajectoryPlannerROS:
   yaw_goal_tolerance: 0.05
 
   #We'll configure how long and with what granularity we'll forward simulate trajectories
-  sim_time: 1.0
+  sim_time: 1.7
   sim_granularity: 0.025
   vx_samples: 3
   vtheta_samples: 20

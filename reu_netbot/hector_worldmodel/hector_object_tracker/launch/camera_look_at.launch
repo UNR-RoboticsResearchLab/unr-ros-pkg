@@ -1,4 +1,0 @@
-<launch>
-  <remap from="object_tracker/point" to="camera/look_at" />
-  <include file="$(find hector_object_tracker)/launch/object_tracker.launch" />
-</launch>
