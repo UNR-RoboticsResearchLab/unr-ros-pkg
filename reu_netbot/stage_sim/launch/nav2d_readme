@@ -1,0 +1,8 @@
+To run the nav2d exploration package
+
+Bring up the world by:
+$ roslaunch stage_sim sem_stage_nav2d.launch
+
+Start the exploration by typing in a new terminal:
+
+$ rosservice call /StartExploration 2
