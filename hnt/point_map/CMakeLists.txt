@@ -68,8 +68,11 @@ include_directories(include
 #   src/${PROJECT_NAME}/point_map.cpp
 # )
 
+## test ubuntu version (don't build if not hyrdo)
+execute_process(COMMAND "cat /etc/issue | cut -c 8-9" OUTPUT_VARIABLE _ubuntu_version OUTPUT_STRIP_TRAILING_WHITESPACE)
+if($_ubuntu_version STREQUAL "12")
 ## Declare a cpp executable
- add_executable(point_map src/point_map.cc)
+  add_executable(point_map src/point_map.cc)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -80,7 +83,7 @@ include_directories(include
    ${catkin_LIBRARIES}
    yaml-cpp
  )
-
+endif($_ubuntu_version STREQUAL "12")
 #############
 ## Install ##
 #############
