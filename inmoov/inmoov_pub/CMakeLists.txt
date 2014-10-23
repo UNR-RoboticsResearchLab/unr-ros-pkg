@@ -4,7 +4,7 @@ project(inmoov_pub)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs tf)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -88,7 +88,7 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-# include_directories(include)
+ include_directories(include ${catkin_INCLUDE_DIRS})
 
 ## Declare a cpp library
 # add_library(inmoov_pub
@@ -96,16 +96,16 @@ catkin_package(
 # )
 
 ## Declare a cpp executable
-# add_executable(inmoov_pub_node src/inmoov_pub_node.cpp)
+ add_executable(state_publisher state_publisher.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(inmoov_pub_node inmoov_pub_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(inmoov_pub_node
-#   ${catkin_LIBRARIES}
-# )
+target_link_libraries(state_publisher
+   ${catkin_LIBRARIES}
+ )
 
 #############
 ## Install ##

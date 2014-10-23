@@ -11,7 +11,6 @@ int main(int argc, char** argv) {
     ros::Rate loop_rate(30);
 
 	// Constants
-	const double degree = M_PI/180;
         const float limits[17] = {       0.7,        // Diff of limits, wristThumbKnuck1
                                          0.3,        // Diff of limits, wristPinkyKnuck1
                                          0.23,       // Diff of limits, wristRingKnuck1
@@ -39,90 +38,81 @@ int main(int argc, char** argv) {
 	    thumbKnuck1 = 0, thumbKnuck2 = 0, angle = 0;
 	
 	// Other variables
-	float rat = 0;
+	float rat = 0; //to define the rate of closing
+	int sign = -1; //to know if we are opening or closing
 
 	// Message Declarations
-	geometry_msgs::TransformStamped odom_trans;
-        sensor_msgs::JointState joint_state;
-        odom_trans.header.frame_id = "odom";
-        odom_trans.child_frame_id = "axis";
-
+    sensor_msgs::JointState joint_state;
 
 	// loop through basic motion
 	while (ros::ok()){
-		// Update joint_state
+	// Update joint_state
 		joint_state.header.stamp = ros::Time::now();
-                joint_state.name.resize(17);
-                joint_state.position.resize(17);        
-                joint_state.name[0] ="wristThumbKnuck1";
-                joint_state.position[0] = wristThumbKnuck1;
-                joint_state.name[1] ="wristPinkyKnuck1";
-                joint_state.position[1] = wristPinkyKnuck1;
-                joint_state.name[2] ="wristRingKnuck1";
-                joint_state.position[2] = wristRingKnuck1;
-                joint_state.name[3] ="indexKnuck1";
-                joint_state.position[3] = indexKnuck1;
-                joint_state.name[4] ="indexKnuck2";
-                joint_state.position[4] = indexKnuck2;
-                joint_state.name[5] ="indexKnuck3";
-                joint_state.position[5] = indexKnuck3;
-                joint_state.name[6] ="middleKnuck1";
-                joint_state.position[6] = middleKnuck1;
-                joint_state.name[7] ="middleKnuck2";
-                joint_state.position[7] = middleKnuck2;
-                joint_state.name[8] ="middleKnuck3";
-                joint_state.position[8] = middleKnuck3;
-                joint_state.name[9] ="ringKnuck1";
-                joint_state.position[9] = ringKnuck1;
-                joint_state.name[10] ="ringKnuck2";
-                joint_state.position[10] = ringKnuck2;
-                joint_state.name[11] ="ringKnuck3";
-                joint_state.position[11] = ringKnuck3;
-                joint_state.name[12] ="pinkyKnuck1";
-                joint_state.position[12] = pinkyKnuck1;
-                joint_state.name[13] ="pinkyKnuck2";
-                joint_state.position[13] = pinkyKnuck2;
-                joint_state.name[14] ="pinkyKnuck3";
-                joint_state.position[14] = pinkyKnuck3;
-                joint_state.name[15] ="thumbKnuck1";
-                joint_state.position[15] = thumbKnuck1;
-                joint_state.name[16] ="thumbKnuck2";
-                joint_state.position[16] = thumbKnuck2;
+        joint_state.name.resize(17);
+        joint_state.position.resize(17);        
+        joint_state.name[0] ="wristThumbKnuck1";
+        joint_state.position[0] = wristThumbKnuck1;
+        joint_state.name[1] ="wristPinkyKnuck1";
+        joint_state.position[1] = wristPinkyKnuck1;
+        joint_state.name[2] ="wristRingKnuck1";
+        joint_state.position[2] = wristRingKnuck1;
+        joint_state.name[3] ="indexKnuck1";
+        joint_state.position[3] = indexKnuck1;
+        joint_state.name[4] ="indexKnuck2";
+        joint_state.position[4] = indexKnuck2;
+        joint_state.name[5] ="indexKnuck3";
+        joint_state.position[5] = indexKnuck3;
+        joint_state.name[6] ="middleKnuck1";
+        joint_state.position[6] = middleKnuck1;
+        joint_state.name[7] ="middleKnuck2";
+        joint_state.position[7] = middleKnuck2;
+        joint_state.name[8] ="middleKnuck3";
+        joint_state.position[8] = middleKnuck3;
+        joint_state.name[9] ="ringKnuck1";
+        joint_state.position[9] = ringKnuck1;
+        joint_state.name[10] ="ringKnuck2";
+        joint_state.position[10] = ringKnuck2;
+        joint_state.name[11] ="ringKnuck3";
+        joint_state.position[11] = ringKnuck3;
+        joint_state.name[12] ="pinkyKnuck1";
+        joint_state.position[12] = pinkyKnuck1;
+        joint_state.name[13] ="pinkyKnuck2";
+        joint_state.position[13] = pinkyKnuck2;
+        joint_state.name[14] ="pinkyKnuck3";
+        joint_state.position[14] = pinkyKnuck3;
+        joint_state.name[15] ="thumbKnuck1";
+        joint_state.position[15] = thumbKnuck1;
+        joint_state.name[16] ="thumbKnuck2";
+        joint_state.position[16] = thumbKnuck2;
 		
 		// Update transform
-		odom_trans.header.stamp = ros::Time::now();
-                odom_trans.transform.translation.x = cos(angle)*2;
-                odom_trans.transform.translation.y = sin(angle)*2;
-                odom_trans.transform.translation.z = .7;
-                odom_trans.transform.rotation = tf::createQuaternionMsgFromYaw(angle+M_PI/2);
-		
-		
-		// Send the joint state and transform
 		joint_pub.publish(joint_state);
-                broadcaster.sendTransform(odom_trans);
 		
-		// create a new robot state
-		rat = (rat + 0.01) % 1.0;
-		
-		wristThumbKnuck1 = rat * limits[0]; 
-		wristPinkyKnuck1 = rat * limits[1]; 
-		wristRingKnuck1 = rat * limits[2];
-                indexKnuck1 = rat * limits[3];
-                indexKnuck2 = rat * limits[4]; 
-                indexKnuck3 = rat * limits[5]; 
-                middleKnuck1 = rat * limits[6];
-                middleKnuck2 = rat * limits[7]; 
-                middleKnuck3 = rat * limits[8]; 
-                ringKnuck1 = rat * limits[9];
-                ringKnuck2 = rat * limits[10];
-	        ringKnuck3 = rat * limits[11]; 
-	        pinkyKnuck1 = rat * limits[12]; 
-	        pinkyKnuck2 = rat * limits[13]; 
-	        pinkyKnuck3 = rat * limits[14];
-	        thumbKnuck1 = rat * limits[15]; 
-	        thumbKnuck2 = rat * limits[16];
-	        angle += degree/4;
-		
+		// Check limit (when hand is opened we should close and vise versa)
+		 if(wristThumbKnuck1 >= limits[0] || wristThumbKnuck1 <= 0)
+	 {
+	       sign = -1 * sign;
+	   }
+	   rat = rat + (sign*0.01) ; //we devide the position to 100 positions (each part according to its limit)
+	   
+		wristThumbKnuck1 = rat * 0.7;  //should be rat + limits[0] ... but it had some errors on the hand
+		wristPinkyKnuck1 = rat * 0.3; 
+		wristRingKnuck1 = rat * 0.23;
+        indexKnuck1 = rat * -1.74533;
+        indexKnuck2 = rat * -1.4; 
+        indexKnuck3 = rat * -0.87; 
+        middleKnuck1 = rat * -1.74533;
+        middleKnuck2 = rat * -1.4; 
+        middleKnuck3 = rat * -0.87; 
+        ringKnuck1 = rat * -1.74533;
+        ringKnuck2 = rat * -1.4;
+	    ringKnuck3 = rat * -0.87; 
+	    pinkyKnuck1 = rat * -1.74533; 
+	    pinkyKnuck2 = rat * -1.4; 
+	    pinkyKnuck3 = rat * -0.87;
+	    thumbKnuck1 = rat * -1.4; 
+	    thumbKnuck2 = rat * -1.13;
+
 		// This will adjust as needed per iteration
 		loop_rate.sleep();
 	}
