@@ -115,39 +115,39 @@ int main(int argc, char** argv) {
 
         // test
         wristThumbKnuck1 = rat * limits[0];  //should be rat + limits[0] ... but it had some errors on the hand
-        //std::cout << limits[0] << std::endl;
+        std::cout << limits[0] << std::endl;
 		wristPinkyKnuck1 = rat * limits[1]; 
-        //std::cout << limits[1] << std::endl;
+        std::cout << limits[1] << std::endl;
 		wristRingKnuck1 = rat * limits[2];
-        //std::cout << limits[2] << std::endl;
+        std::cout << limits[2] << std::endl;
         indexKnuck1 = rat * limits[3];
-        //std::cout << limits[3] << std::endl;
+        std::cout << limits[3] << std::endl;
         indexKnuck2 = rat * limits[4];
-        //std::cout << limits[4] << std::endl; 
+        std::cout << limits[4] << std::endl; 
         indexKnuck3 = rat * limits[5];
-        //std::cout << limits[5] << std::endl; 
+        std::cout << limits[5] << std::endl; 
         middleKnuck1 = rat * limits[6];
-        //std::cout << limits[6] << std::endl;
+        std::cout << limits[6] << std::endl;
         middleKnuck2 = rat * limits[7];
-        //std::cout << limits[7] << std::endl; 
+        std::cout << limits[7] << std::endl; 
         middleKnuck3 = rat * limits[8]; 
-        //std::cout << limits[8] << std::endl;
+        std::cout << limits[8] << std::endl;
         ringKnuck1 = rat * limits[9];
-        //std::cout << limits[9] << std::endl;
+        std::cout << limits[9] << std::endl;
         ringKnuck2 = rat * limits[10];
-        //std::cout << limits[10] << std::endl;
+        std::cout << limits[10] << std::endl;
 	    ringKnuck3 = rat * limits[11]; 
-        //std::cout << limits[11] << std::endl;
+        std::cout << limits[11] << std::endl;
 	    pinkyKnuck1 = rat * limits[12];
-        //std::cout << limits[12] << std::endl; 
+        std::cout << limits[12] << std::endl; 
 	    pinkyKnuck2 = rat * limits[13];
-        //std::cout << limits[13] << std::endl; 
+        std::cout << limits[13] << std::endl; 
 	    pinkyKnuck3 = rat * limits[14];
-        //std::cout << limits[14] << std::endl;
+        std::cout << limits[14] << std::endl;
 	    thumbKnuck1 = rat * limits[15]; 
-        //std::cout << limits[15] << std::endl;
+        std::cout << limits[15] << std::endl;
 	    thumbKnuck2 = rat * limits[16];
-        //std::cout << limits[16] << std::endl;
+        std::cout << limits[16] << std::endl;
 
 		// This will adjust as needed per iteration
 		loop_rate.sleep();

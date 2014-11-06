@@ -1,5 +1,5 @@
 <launch>
   <param name="robot_description" textfile="$(find inmoov_urdf)/urdf/rightHand.urdf" />
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" output="screen" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
   <node name="state_publisher" pkg="inmoov_pub" type="state_publisher" output="screen" />
 </launch>
