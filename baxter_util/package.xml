@@ -2,12 +2,12 @@
 <package>
   <name>baxter_util</name>
   <version>0.0.0</version>
-  <description>The baxter_util package</description>
+  <description>Utilities for Baxter operation at UNR</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="dfseifer@todo.todo">dfseifer</maintainer>
+  <maintainer email="dave@cse.unr.edu">David Feil-Seifer</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->

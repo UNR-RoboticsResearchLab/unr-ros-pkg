@@ -1,0 +1,11 @@
+<launch>
+
+	<!-- open up the necessary kinect nodes -->
+	<!--<include file="$(find openni_launch)/launch/openni.launch"/>-->
+
+	<!-- transform kinect to be attached to the top of baxter's faceplace -->
+	<!-- (upside-down) -->
+	<node pkg="tf" type="static_transform_publisher" name="kinToBax" args="0 0 0 -1.57079632679 -1.57079632679 0 head_camera camera_link2  100"/>
+	<node pkg="tf" type="static_transform_publisher" name="kinToBax2" args="0 0 0 0 0.78539816339 0  camera_link2 camera_link 100"/>
+
+</launch>
