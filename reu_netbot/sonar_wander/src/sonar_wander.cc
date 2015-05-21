@@ -49,10 +49,10 @@ void sonarCallback( const p2os_msgs::SonarArray::ConstPtr &msg)
 	right_dist = DBL_MAX;
 
 	// get flbr values from sonar msgs
-	if( msg->range_count != 16 && msg->range_count != 8 )
+	if( msg->ranges_count != 16 && msg->ranges_count != 8 )
 	{
 		// number of sonar is not right, report things
-		ROS_WARN("range_count is [%d] should be 8 or 16", msg->range_count );
+		ROS_WARN("range_count is [%d] should be 8 or 16", msg->ranges_count );
 	}
 	
 	// for each sonar reading
@@ -77,22 +77,22 @@ void sonarCallback( const p2os_msgs::SonarArray::ConstPtr &msg)
 		
     // is the x/y coordinate for this range point
     // closer than the closest right point so far?
-    if( ydist > 0.25 && xdist > 0 )
+    if( y > 0.25 && x > 0 )
     {
       // if so, set the right_distance to be
       // the current distance
-      double dist = sqrt (ydist*ydist + xdist*xdist);
+      double dist = sqrt (y*y + x*x);
       if( dist < right_dist )
         right_dist = dist;
     }
 
     // is the x/y coordinate for this range point
     // closer than the closest left point so far?
-    if( ydist > 0.25 && xdist < 0 )
+    if( y > 0.25 && x < 0 )
     {
       // if so, set the left_distance to be
       // the current distance
-      double dist = sqrt (ydist*ydist + xdist*xdist);
+      double dist = sqrt (y*y + x*x);
       if( dist < left_dist )
         left_dist = dist;
 		}

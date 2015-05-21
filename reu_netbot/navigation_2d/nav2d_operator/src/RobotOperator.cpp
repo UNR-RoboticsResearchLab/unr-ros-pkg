@@ -201,7 +201,7 @@ void RobotOperator::executeCommand()
 {
 	// 1. Get a copy of the costmap to work on.
 	mCostmap = mLocalMap->getCostmap();
-	boost::unique_lock<boost::shared_mutex> lock(*(mCostmap->getLock()));
+	//boost::unique_lock<boost::shared_mutex> lock(*(mCostmap->getMutex()));
 	double bestDirection, d;
 	
 	// 2. Set velocity and direction depending on drive mode

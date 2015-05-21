@@ -105,16 +105,16 @@ include_directories(
 # )
 
 ## Declare a cpp executable
-# add_executable(sonar_wander_node src/sonar_wander_node.cpp)
+ add_executable(sonar_wander src/sonar_wander.cc)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 # add_dependencies(sonar_wander_node sonar_wander_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(sonar_wander_node
-#   ${catkin_LIBRARIES}
-# )
+ target_link_libraries(sonar_wander
+   ${catkin_LIBRARIES}
+ )
 
 #############
 ## Install ##
